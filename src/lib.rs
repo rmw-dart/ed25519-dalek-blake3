@@ -284,5 +284,6 @@ pub use crate::public::*;
 pub use crate::secret::*;
 
 // Re-export the `Signer` and `Verifier` traits from the `signature` crate
+pub use blake3_512::Hasher;
 pub use ed25519::signature::{Signer, Verifier};
 pub use ed25519::Signature;
