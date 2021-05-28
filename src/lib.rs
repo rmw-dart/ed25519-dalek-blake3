@@ -245,7 +245,6 @@ pub extern crate ed25519;
 
 #[cfg(all(feature = "alloc", not(feature = "std")))]
 extern crate alloc;
-extern crate blake3;
 extern crate curve25519_dalek;
 #[cfg(all(
   any(feature = "batch", feature = "batch_deterministic"),
