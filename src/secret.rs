@@ -16,6 +16,7 @@ use curve25519_dalek::digest::generic_array::typenum::U64;
 use curve25519_dalek::digest::Digest;
 use curve25519_dalek::edwards::CompressedEdwardsY;
 use curve25519_dalek::scalar::Scalar;
+use x25519_dalek::StaticSecret;
 
 #[cfg(feature = "rand")]
 use rand::{CryptoRng, RngCore};
@@ -74,11 +75,11 @@ impl SecretKey {
   /// # Example
   ///
   /// ```
-  /// # extern crate ed25519_dalek;
+  /// # extern crate ed25519_dalek_blake3;
   /// #
-  /// use ed25519_dalek::SecretKey;
-  /// use ed25519_dalek::SECRET_KEY_LENGTH;
-  /// use ed25519_dalek::SignatureError;
+  /// use ed25519_dalek_blake3::SecretKey;
+  /// use ed25519_dalek_blake3::SECRET_KEY_LENGTH;
+  /// use ed25519_dalek_blake3::SignatureError;
   ///
   /// # fn doctest() -> Result<SecretKey, SignatureError> {
   /// let secret_key_bytes: [u8; SECRET_KEY_LENGTH] = [
@@ -125,15 +126,15 @@ impl SecretKey {
   ///
   /// ```
   /// extern crate rand;
-  /// extern crate ed25519_dalek;
+  /// extern crate ed25519_dalek_blake3;
   ///
   /// # #[cfg(feature = "std")]
   /// # fn main() {
   /// #
   /// use rand::rngs::OsRng;
-  /// use ed25519_dalek::PublicKey;
-  /// use ed25519_dalek::SecretKey;
-  /// use ed25519_dalek::Signature;
+  /// use ed25519_dalek_blake3::PublicKey;
+  /// use ed25519_dalek_blake3::SecretKey;
+  /// use ed25519_dalek_blake3::Signature;
   ///
   /// let mut csprng = OsRng{};
   /// let secret_key: SecretKey = SecretKey::generate(&mut csprng);
@@ -147,14 +148,14 @@ impl SecretKey {
   ///
   /// ```
   /// # extern crate rand;
-  /// # extern crate ed25519_dalek;
+  /// # extern crate ed25519_dalek_blake3;
   /// #
   /// # fn main() {
   /// #
   /// # use rand::rngs::OsRng;
-  /// # use ed25519_dalek::PublicKey;
-  /// # use ed25519_dalek::SecretKey;
-  /// # use ed25519_dalek::Signature;
+  /// # use ed25519_dalek_blake3::PublicKey;
+  /// # use ed25519_dalek_blake3::SecretKey;
+  /// # use ed25519_dalek_blake3::Signature;
   /// #
   /// # let mut csprng = OsRng{};
   /// # let secret_key: SecretKey = SecretKey::generate(&mut csprng);

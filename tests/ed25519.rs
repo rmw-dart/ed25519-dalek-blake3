@@ -11,7 +11,7 @@
 
 #[cfg(all(test, feature = "serde"))]
 extern crate bincode;
-extern crate ed25519_dalek;
+extern crate ed25519_dalek_blake3;
 extern crate hex;
 extern crate rand;
 #[cfg(all(test, feature = "serde"))]
@@ -19,12 +19,13 @@ extern crate serde_crate;
 #[cfg(all(test, feature = "serde"))]
 extern crate toml;
 
-use ed25519_dalek::*;
+use ed25519_dalek_blake3::*;
 
 use hex::FromHex;
 
-use blake3_512::Hasher;
+use ed25519_dalek_blake3::blake3_512::Hasher;
 
+/*
 #[cfg(test)]
 mod vectors {
   use ed25519::signature::Signature as _;
@@ -87,7 +88,9 @@ mod vectors {
       );
     }
   }
+    */
 
+/*
   // From https://tools.ietf.org/html/rfc8032#section-7.3
   #[test]
   fn ed25519ph_rf8032_test_vector() {
@@ -132,6 +135,7 @@ mod vectors {
     );
   }
 }
+  */
 
 #[cfg(test)]
 mod integrations {
