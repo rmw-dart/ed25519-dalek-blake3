@@ -22,6 +22,7 @@ use x25519_dalek::StaticSecret;
 use rand::{CryptoRng, RngCore};
 
 use crate::blake3_512::Hasher;
+use blake3::hash;
 
 #[cfg(feature = "serde")]
 use serde::de::Error as SerdeError;
@@ -547,5 +548,11 @@ mod test {
     let memory: &[u8] = unsafe { ::std::slice::from_raw_parts(secret_ptr, 32) };
 
     assert!(!memory.contains(&0x15));
+  }
+}
+
+impl From<SecretKey> for StaticSecret {
+  fn from(secret: SecretKey) -> Self {
+    StaticSecret::from(*hash(secret.as_bytes()).as_bytes())
   }
 }

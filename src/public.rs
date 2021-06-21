@@ -20,6 +20,7 @@ use curve25519_dalek::edwards::EdwardsPoint;
 use curve25519_dalek::scalar::Scalar;
 
 use ed25519::signature::Verifier;
+use x25519_dalek::PublicKey as X25519PublicKey;
 
 pub use crate::blake3_512::Hasher;
 
@@ -372,5 +373,13 @@ impl<'d> Deserialize<'d> for PublicKey {
   {
     let bytes = <SerdeByteBuf>::deserialize(deserializer)?;
     PublicKey::from_bytes(bytes.as_ref()).map_err(SerdeError::custom)
+  }
+}
+
+impl From<PublicKey> for X25519PublicKey {
+  fn from(pk: PublicKey) -> X25519PublicKey {
+    let cey = CompressedEdwardsY::from_slice(pk.as_bytes());
+    let ep = cey.decompress().unwrap();
+    X25519PublicKey::from(*ep.to_montgomery().as_bytes())
   }
 }
