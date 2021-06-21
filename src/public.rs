@@ -102,9 +102,9 @@ impl PublicKey {
   /// ```
   /// # extern crate ed25519_dalek_blake3;
   /// #
-  /// use ed25519_dalek::PublicKey;
-  /// use ed25519_dalek::PUBLIC_KEY_LENGTH;
-  /// use ed25519_dalek::SignatureError;
+  /// use ed25519_dalek_blake3::PublicKey;
+  /// use ed25519_dalek_blake3::PUBLIC_KEY_LENGTH;
+  /// use ed25519_dalek_blake3::SignatureError;
   ///
   /// # fn doctest() -> Result<PublicKey, SignatureError> {
   /// let public_key_bytes: [u8; PUBLIC_KEY_LENGTH] = [

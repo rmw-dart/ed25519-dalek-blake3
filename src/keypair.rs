@@ -102,14 +102,14 @@ impl Keypair {
   ///
   /// ```
   /// extern crate rand;
-  /// extern crate ed25519_dalek;
+  /// extern crate ed25519_dalek_blake3;
   ///
   /// # #[cfg(feature = "std")]
   /// # fn main() {
   ///
   /// use rand::rngs::OsRng;
-  /// use ed25519_dalek::Keypair;
-  /// use ed25519_dalek::Signature;
+  /// use ed25519_dalek_blake3::Keypair;
+  /// use ed25519_dalek_blake3::Signature;
   ///
   /// let mut csprng = OsRng{};
   /// let keypair: Keypair = Keypair::generate(&mut csprng);
@@ -162,13 +162,13 @@ impl Keypair {
   /// # Examples
   ///
   /// ```
-  /// extern crate ed25519_dalek;
+  /// extern crate ed25519_dalek_blake3;
   /// extern crate rand;
   ///
-  /// use ed25519_dalek::Digest;
-  /// use ed25519_dalek::Keypair;
-  /// use ed25519_dalek::Hasher;
-  /// use ed25519_dalek::Signature;
+  /// use ed25519_dalek_blake3::Digest;
+  /// use ed25519_dalek_blake3::Keypair;
+  /// use ed25519_dalek_blake3::Hasher;
+  /// use ed25519_dalek_blake3::Signature;
   /// use rand::rngs::OsRng;
   ///
   /// # #[cfg(feature = "std")]
@@ -209,14 +209,14 @@ impl Keypair {
   /// your own!):
   ///
   /// ```
-  /// # extern crate ed25519_dalek;
+  /// # extern crate ed25519_dalek_blake3;
   /// # extern crate rand;
   /// #
-  /// # use ed25519_dalek::Digest;
-  /// # use ed25519_dalek::Keypair;
-  /// # use ed25519_dalek::Signature;
-  /// # use ed25519_dalek::SignatureError;
-  /// # use ed25519_dalek::Hasher;
+  /// # use ed25519_dalek_blake3::Digest;
+  /// # use ed25519_dalek_blake3::Keypair;
+  /// # use ed25519_dalek_blake3::Signature;
+  /// # use ed25519_dalek_blake3::SignatureError;
+  /// # use ed25519_dalek_blake3::Hasher;
   /// # use rand::rngs::OsRng;
   /// #
   /// # fn do_test() -> Result<Signature, SignatureError> {
@@ -287,14 +287,14 @@ impl Keypair {
   /// # Examples
   ///
   /// ```
-  /// extern crate ed25519_dalek;
+  /// extern crate ed25519_dalek_blake3;
   /// extern crate rand;
   ///
-  /// use ed25519_dalek::Digest;
-  /// use ed25519_dalek::Keypair;
-  /// use ed25519_dalek::Signature;
-  /// use ed25519_dalek::SignatureError;
-  /// use ed25519_dalek::Hasher;
+  /// use ed25519_dalek_blake3::Digest;
+  /// use ed25519_dalek_blake3::Keypair;
+  /// use ed25519_dalek_blake3::Signature;
+  /// use ed25519_dalek_blake3::SignatureError;
+  /// use ed25519_dalek_blake3::Hasher;
   /// use rand::rngs::OsRng;
   ///
   /// # fn do_test() -> Result<(), SignatureError> {
