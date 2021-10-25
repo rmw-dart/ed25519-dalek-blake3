@@ -2,7 +2,6 @@
 name = "ed25519-dalek-blake3"
 version = "1.0.5"
 edition = "2021"
-
 authors = ["isis lovecruft <isis@patternsinthevoid.net>", "rmw <i@rmw.link>"]
 readme = "README.md"
 license = "BSD-3-Clause"
