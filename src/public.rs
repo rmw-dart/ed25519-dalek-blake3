@@ -376,8 +376,8 @@ impl<'d> Deserialize<'d> for PublicKey {
   }
 }
 
-impl From<PublicKey> for X25519PublicKey {
-  fn from(pk: PublicKey) -> X25519PublicKey {
+impl From<&PublicKey> for X25519PublicKey {
+  fn from(pk: &PublicKey) -> X25519PublicKey {
     let cey = CompressedEdwardsY::from_slice(pk.as_bytes());
     let ep = cey.decompress().unwrap();
     X25519PublicKey::from(*ep.to_montgomery().as_bytes())

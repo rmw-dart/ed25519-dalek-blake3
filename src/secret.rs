@@ -45,9 +45,9 @@ use crate::signature::*;
 pub struct SecretKey(pub(crate) [u8; SECRET_KEY_LENGTH]);
 
 impl Drop for SecretKey {
-    fn drop(&mut self) {
-        self.0.zeroize()
-    }
+  fn drop(&mut self) {
+    self.0.zeroize()
+  }
 }
 
 impl Debug for SecretKey {
@@ -250,10 +250,10 @@ pub struct ExpandedSecretKey {
 }
 
 impl Drop for ExpandedSecretKey {
-    fn drop(&mut self) {
-        self.key.zeroize();
-        self.nonce.zeroize()
-    }
+  fn drop(&mut self) {
+    self.key.zeroize();
+    self.nonce.zeroize()
+  }
 }
 
 impl<'a> From<&'a SecretKey> for ExpandedSecretKey {
@@ -560,8 +560,8 @@ mod test {
   }
 }
 
-impl From<SecretKey> for StaticSecret {
-  fn from(secret: SecretKey) -> Self {
+impl From<&SecretKey> for StaticSecret {
+  fn from(secret: &SecretKey) -> Self {
     StaticSecret::from(*hash(secret.as_bytes()).as_bytes())
   }
 }
