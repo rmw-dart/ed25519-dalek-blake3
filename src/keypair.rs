@@ -32,7 +32,7 @@ use crate::public::*;
 use crate::secret::*;
 
 /// An ed25519 keypair.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Keypair {
   /// The secret half of this keypair.
   pub secret: SecretKey,

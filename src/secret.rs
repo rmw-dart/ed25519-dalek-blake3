@@ -42,6 +42,7 @@ use crate::signature::*;
 ///
 /// Instances of this secret are automatically overwritten with zeroes when they
 /// fall out of scope.
+#[derive(Clone)]
 pub struct SecretKey(pub(crate) [u8; SECRET_KEY_LENGTH]);
 
 impl Drop for SecretKey {
